@@ -10,11 +10,14 @@
 		9A6BFBF197979D302A4F2C20 /* Pods_ClothingStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8D9002D9E2ACE7FB8B93D9F /* Pods_ClothingStore.framework */; };
 		C63A6B062A27451D0028C4ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B052A27451D0028C4ED /* AppDelegate.swift */; };
 		C63A6B082A27451D0028C4ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B072A27451D0028C4ED /* SceneDelegate.swift */; };
-		C63A6B0A2A27451D0028C4ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B092A27451D0028C4ED /* ViewController.swift */; };
+		C63A6B0A2A27451D0028C4ED /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B092A27451D0028C4ED /* HomePageViewController.swift */; };
 		C63A6B0F2A27451F0028C4ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63A6B0E2A27451F0028C4ED /* Assets.xcassets */; };
 		C63A6B122A27451F0028C4ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C63A6B102A27451F0028C4ED /* LaunchScreen.storyboard */; };
 		C63A6B1D2A27471E0028C4ED /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B1C2A27471E0028C4ED /* Coordinator.swift */; };
 		C63A6B202A2747860028C4ED /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B1F2A2747860028C4ED /* AppCoordinator.swift */; };
+		C63A6B232A2895A10028C4ED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B222A2895A10028C4ED /* TabBarController.swift */; };
+		C63A6B262A28962A0028C4ED /* HomePageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B252A28962A0028C4ED /* HomePageCoordinator.swift */; };
+		C63A6B282A2896A10028C4ED /* HomePageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B272A2896A10028C4ED /* HomePageViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +25,15 @@
 		C63A6B022A27451D0028C4ED /* ClothingStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothingStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63A6B052A27451D0028C4ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C63A6B072A27451D0028C4ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C63A6B092A27451D0028C4ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C63A6B092A27451D0028C4ED /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		C63A6B0E2A27451F0028C4ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C63A6B112A27451F0028C4ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C63A6B132A27451F0028C4ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C63A6B1C2A27471E0028C4ED /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C63A6B1F2A2747860028C4ED /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C63A6B222A2895A10028C4ED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C63A6B252A28962A0028C4ED /* HomePageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCoordinator.swift; sourceTree = "<group>"; };
+		C63A6B272A2896A10028C4ED /* HomePageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewFactory.swift; sourceTree = "<group>"; };
 		E8D9002D9E2ACE7FB8B93D9F /* Pods_ClothingStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClothingStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5A7B106B96CB16EE2ED24D /* Pods-ClothingStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothingStore.release.xcconfig"; path = "Target Support Files/Pods-ClothingStore/Pods-ClothingStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,9 +127,28 @@
 			isa = PBXGroup;
 			children = (
 				C63A6B1F2A2747860028C4ED /* AppCoordinator.swift */,
-				C63A6B092A27451D0028C4ED /* ViewController.swift */,
+				C63A6B222A2895A10028C4ED /* TabBarController.swift */,
+				C63A6B212A2895550028C4ED /* HomePageViewController */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		C63A6B212A2895550028C4ED /* HomePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C63A6B252A28962A0028C4ED /* HomePageCoordinator.swift */,
+				C63A6B272A2896A10028C4ED /* HomePageViewFactory.swift */,
+				C63A6B242A2896150028C4ED /* View */,
+			);
+			path = HomePageViewController;
+			sourceTree = "<group>";
+		};
+		C63A6B242A2896150028C4ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C63A6B092A27451D0028C4ED /* HomePageViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,10 +266,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C63A6B1D2A27471E0028C4ED /* Coordinator.swift in Sources */,
-				C63A6B0A2A27451D0028C4ED /* ViewController.swift in Sources */,
+				C63A6B262A28962A0028C4ED /* HomePageCoordinator.swift in Sources */,
+				C63A6B0A2A27451D0028C4ED /* HomePageViewController.swift in Sources */,
 				C63A6B202A2747860028C4ED /* AppCoordinator.swift in Sources */,
+				C63A6B232A2895A10028C4ED /* TabBarController.swift in Sources */,
 				C63A6B062A27451D0028C4ED /* AppDelegate.swift in Sources */,
 				C63A6B082A27451D0028C4ED /* SceneDelegate.swift in Sources */,
+				C63A6B282A2896A10028C4ED /* HomePageViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

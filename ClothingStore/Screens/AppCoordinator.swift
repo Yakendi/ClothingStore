@@ -20,7 +20,7 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Create
     func start() {
-        let controller = ViewController()
+        let controller = TabBarController()
         
         window.rootViewController = controller
         window.makeKeyAndVisible()
