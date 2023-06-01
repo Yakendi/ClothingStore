@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CartPageCoordinator: Coordinator {
+final class BagPageCoordinator: Coordinator {
     
     // MARK: - Public
     var navigationController = UINavigationController()
@@ -20,7 +20,7 @@ final class CartPageCoordinator: Coordinator {
     }
     
     func start() {
-        let controller = CartPageViewFactory.create()
+        let controller = BagPageViewFactory.create()
         self.navigationController.setViewControllers([controller], animated: true)
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CartPageViewController: UIViewController {
+class BagPageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

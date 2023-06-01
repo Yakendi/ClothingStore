@@ -1,0 +1,16 @@
+//
+//  StoreModel.swift
+//  ClothingStore
+//
+//  Created by Аслан Микалаев on 01.06.2023.
+//
+
+import Foundation
+
+struct StoreModel: Codable {
+    let id: String
+    let title: String
+    let price: Int
+    let description: String
+    let category: String
+}

@@ -51,14 +51,15 @@ class TabBarController: UITabBarController {
     let homePageViewController = HomePageCoordinator()
     let catalogPageViewController = CatalogPageCoordinator()
     let favoritesPageViewController = FavoritesPageCoordinator()
-    let cartPageViewController = CartPageCoordinator()
+    let cartPageViewController = BagPageCoordinator()
     let accountPageViewController = AccountPageCoordinator()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = .systemBlue
+        tabBar.tintColor = .systemPink
+        tabBar.unselectedItemTintColor = .systemGray2
         setupTabs()
     }
 }
