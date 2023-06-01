@@ -34,6 +34,7 @@ class TabBarController: UITabBarController {
 
     // MARK: - Public
     let homePageViewController = HomePageCoordinator()
+    let catalogPageViewController = CatalogPageCoordinator()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -53,6 +54,12 @@ extension TabBarController {
             tag: 1
         )
         
-        setViewControllers([homePageViewController.navigationController], animated: true)
+        catalogPageViewController.navigationController.tabBarItem = UITabBarItem(
+            title: TabBarItems.catalog.title,
+            image: TabBarItems.catalog.image,
+            tag: 2
+        )
+        
+        setViewControllers([homePageViewController.navigationController, catalogPageViewController.navigationController], animated: true)
     }
 }
