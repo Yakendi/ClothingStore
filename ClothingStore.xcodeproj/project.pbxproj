@@ -24,6 +24,9 @@
 		C63A6B332A28A5800028C4ED /* FavoritesPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B322A28A5800028C4ED /* FavoritesPageCoordinator.swift */; };
 		C63A6B352A28A58F0028C4ED /* FavoritesPageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B342A28A58F0028C4ED /* FavoritesPageViewFactory.swift */; };
 		C63A6B382A28A5A60028C4ED /* FavoritesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B372A28A5A60028C4ED /* FavoritesPageViewController.swift */; };
+		C63A6B3B2A28A9C00028C4ED /* CartPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B3A2A28A9C00028C4ED /* CartPageCoordinator.swift */; };
+		C63A6B3D2A28AAD10028C4ED /* CartPageVIewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B3C2A28AAD10028C4ED /* CartPageVIewFactory.swift */; };
+		C63A6B402A28AB0F0028C4ED /* CartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B3F2A28AB0F0028C4ED /* CartPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		C63A6B322A28A5800028C4ED /* FavoritesPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPageCoordinator.swift; sourceTree = "<group>"; };
 		C63A6B342A28A58F0028C4ED /* FavoritesPageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPageViewFactory.swift; sourceTree = "<group>"; };
 		C63A6B372A28A5A60028C4ED /* FavoritesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPageViewController.swift; sourceTree = "<group>"; };
+		C63A6B3A2A28A9C00028C4ED /* CartPageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPageCoordinator.swift; sourceTree = "<group>"; };
+		C63A6B3C2A28AAD10028C4ED /* CartPageVIewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPageVIewFactory.swift; sourceTree = "<group>"; };
+		C63A6B3F2A28AB0F0028C4ED /* CartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPageViewController.swift; sourceTree = "<group>"; };
 		E8D9002D9E2ACE7FB8B93D9F /* Pods_ClothingStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClothingStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5A7B106B96CB16EE2ED24D /* Pods-ClothingStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothingStore.release.xcconfig"; path = "Target Support Files/Pods-ClothingStore/Pods-ClothingStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +149,7 @@
 				C63A6B212A2895550028C4ED /* HomePageViewController */,
 				C63A6B292A28A1760028C4ED /* Catalog Section */,
 				C63A6B312A28A5500028C4ED /* Favorites Section */,
+				C63A6B392A28A99B0028C4ED /* Cart section */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -197,6 +204,24 @@
 			isa = PBXGroup;
 			children = (
 				C63A6B372A28A5A60028C4ED /* FavoritesPageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C63A6B392A28A99B0028C4ED /* Cart section */ = {
+			isa = PBXGroup;
+			children = (
+				C63A6B3A2A28A9C00028C4ED /* CartPageCoordinator.swift */,
+				C63A6B3C2A28AAD10028C4ED /* CartPageVIewFactory.swift */,
+				C63A6B3E2A28AB000028C4ED /* View */,
+			);
+			path = "Cart section";
+			sourceTree = "<group>";
+		};
+		C63A6B3E2A28AB000028C4ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C63A6B3F2A28AB0F0028C4ED /* CartPageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,11 +348,14 @@
 				C63A6B302A28A28E0028C4ED /* CatalogPageViewController.swift in Sources */,
 				C63A6B2D2A28A1990028C4ED /* CatalogPageViewFactory.swift in Sources */,
 				C63A6B0A2A27451D0028C4ED /* HomePageViewController.swift in Sources */,
+				C63A6B402A28AB0F0028C4ED /* CartPageViewController.swift in Sources */,
 				C63A6B352A28A58F0028C4ED /* FavoritesPageViewFactory.swift in Sources */,
+				C63A6B3B2A28A9C00028C4ED /* CartPageCoordinator.swift in Sources */,
 				C63A6B202A2747860028C4ED /* AppCoordinator.swift in Sources */,
 				C63A6B232A2895A10028C4ED /* TabBarController.swift in Sources */,
 				C63A6B062A27451D0028C4ED /* AppDelegate.swift in Sources */,
 				C63A6B082A27451D0028C4ED /* SceneDelegate.swift in Sources */,
+				C63A6B3D2A28AAD10028C4ED /* CartPageVIewFactory.swift in Sources */,
 				C63A6B282A2896A10028C4ED /* HomePageViewFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
