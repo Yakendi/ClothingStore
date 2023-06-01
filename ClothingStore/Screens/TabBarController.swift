@@ -12,6 +12,7 @@ enum TabBarItems {
     case catalog
     case favorites
     case cart
+    case account
     
     var title: String {
         switch self {
@@ -23,6 +24,8 @@ enum TabBarItems {
             return "Избранное"
         case .cart:
             return "Корзина"
+        case .account:
+            return "Профиль"
         }
     }
     
@@ -36,6 +39,8 @@ enum TabBarItems {
             return UIImage(named: "favoritesPage") ?? UIImage()
         case .cart:
             return UIImage(named: "cartPage") ?? UIImage()
+        case .account:
+            return UIImage(named: "accountPage") ?? UIImage()
         }
     }
 }
@@ -47,6 +52,7 @@ class TabBarController: UITabBarController {
     let catalogPageViewController = CatalogPageCoordinator()
     let favoritesPageViewController = FavoritesPageCoordinator()
     let cartPageViewController = CartPageCoordinator()
+    let accountPageViewController = AccountPageCoordinator()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -84,11 +90,18 @@ extension TabBarController {
             tag: 4
         )
         
+        accountPageViewController.navigationController.tabBarItem = UITabBarItem(
+            title: TabBarItems.account.title,
+            image: TabBarItems.account.image,
+            tag: 5
+        )
+        
         setViewControllers([
             homePageViewController.navigationController,
             catalogPageViewController.navigationController,
             favoritesPageViewController.navigationController,
-            cartPageViewController.navigationController
+            cartPageViewController.navigationController,
+            accountPageViewController.navigationController
         ], animated: true)
     }
 }
