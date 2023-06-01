@@ -10,6 +10,7 @@ import UIKit
 enum TabBarItems {
     case home
     case catalog
+    case favorites
     
     var title: String {
         switch self {
@@ -17,6 +18,8 @@ enum TabBarItems {
             return "Главная"
         case .catalog:
             return "Каталог"
+        case .favorites:
+            return "Избранное"
         }
     }
     
@@ -26,6 +29,8 @@ enum TabBarItems {
             return UIImage(named: "homePage") ?? UIImage()
         case .catalog:
             return UIImage(named: "catalogPage") ?? UIImage()
+        case .favorites:
+            return UIImage(named: "favoritesPage") ?? UIImage()
         }
     }
 }
@@ -35,6 +40,7 @@ class TabBarController: UITabBarController {
     // MARK: - Public
     let homePageViewController = HomePageCoordinator()
     let catalogPageViewController = CatalogPageCoordinator()
+    let favoritesPageViewController = FavoritesPageCoordinator()
     
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -60,6 +66,15 @@ extension TabBarController {
             tag: 2
         )
         
-        setViewControllers([homePageViewController.navigationController, catalogPageViewController.navigationController], animated: true)
+        favoritesPageViewController.navigationController.tabBarItem = UITabBarItem(
+            title: TabBarItems.favorites.title,
+            image: TabBarItems.favorites.image,
+            tag: 3)
+        
+        setViewControllers([
+            homePageViewController.navigationController,
+            catalogPageViewController.navigationController,
+            favoritesPageViewController.navigationController
+        ], animated: true)
     }
 }
