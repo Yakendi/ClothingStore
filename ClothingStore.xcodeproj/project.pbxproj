@@ -35,6 +35,10 @@
 		C63A6B512A28F9E40028C4ED /* NetworkEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B502A28F9E40028C4ED /* NetworkEndpoint.swift */; };
 		C63A6B532A28FA600028C4ED /* NetworkErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B522A28FA600028C4ED /* NetworkErrorTypes.swift */; };
 		C63A6B562A28FFC50028C4ED /* ServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A6B552A28FFC50028C4ED /* ServiceFactory.swift */; };
+		C693AD352A2A339300EEDDDC /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693AD342A2A339300EEDDDC /* HomePageTableViewCell.swift */; };
+		C693AD372A2A3E5100EEDDDC /* HomePageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693AD362A2A3E5100EEDDDC /* HomePageCollectionViewCell.swift */; };
+		C693AD392A2A4F0000EEDDDC /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693AD382A2A4F0000EEDDDC /* CollectionViewCell.swift */; };
+		C693AD3C2A2A75AA00EEDDDC /* HomePageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C693AD3B2A2A75A900EEDDDC /* HomePageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		C63A6B502A28F9E40028C4ED /* NetworkEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEndpoint.swift; sourceTree = "<group>"; };
 		C63A6B522A28FA600028C4ED /* NetworkErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTypes.swift; sourceTree = "<group>"; };
 		C63A6B552A28FFC50028C4ED /* ServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceFactory.swift; sourceTree = "<group>"; };
+		C693AD342A2A339300EEDDDC /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		C693AD362A2A3E5100EEDDDC /* HomePageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C693AD382A2A4F0000EEDDDC /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C693AD3B2A2A75A900EEDDDC /* HomePageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageModel.swift; sourceTree = "<group>"; };
 		E8D9002D9E2ACE7FB8B93D9F /* Pods_ClothingStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClothingStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB5A7B106B96CB16EE2ED24D /* Pods-ClothingStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothingStore.release.xcconfig"; path = "Target Support Files/Pods-ClothingStore/Pods-ClothingStore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +195,7 @@
 		C63A6B242A2896150028C4ED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C693AD3A2A2A759B00EEDDDC /* Model */,
 				C63A6B492A28C4F90028C4ED /* Cell */,
 				C63A6B092A27451D0028C4ED /* HomePageViewController.swift */,
 			);
@@ -268,6 +277,9 @@
 		C63A6B492A28C4F90028C4ED /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				C693AD342A2A339300EEDDDC /* HomePageTableViewCell.swift */,
+				C693AD362A2A3E5100EEDDDC /* HomePageCollectionViewCell.swift */,
+				C693AD382A2A4F0000EEDDDC /* CollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -296,6 +308,14 @@
 				C63A6B552A28FFC50028C4ED /* ServiceFactory.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C693AD3A2A2A759B00EEDDDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C693AD3B2A2A75A900EEDDDC /* HomePageModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,6 +441,9 @@
 				C63A6B262A28962A0028C4ED /* HomePageCoordinator.swift in Sources */,
 				C63A6B302A28A28E0028C4ED /* CatalogPageViewController.swift in Sources */,
 				C63A6B2D2A28A1990028C4ED /* CatalogPageViewFactory.swift in Sources */,
+				C693AD3C2A2A75AA00EEDDDC /* HomePageModel.swift in Sources */,
+				C693AD352A2A339300EEDDDC /* HomePageTableViewCell.swift in Sources */,
+				C693AD392A2A4F0000EEDDDC /* CollectionViewCell.swift in Sources */,
 				C63A6B0A2A27451D0028C4ED /* HomePageViewController.swift in Sources */,
 				C63A6B402A28AB0F0028C4ED /* BagPageViewController.swift in Sources */,
 				C63A6B352A28A58F0028C4ED /* FavoritesPageViewFactory.swift in Sources */,
@@ -432,6 +455,7 @@
 				C63A6B062A27451D0028C4ED /* AppDelegate.swift in Sources */,
 				C63A6B512A28F9E40028C4ED /* NetworkEndpoint.swift in Sources */,
 				C63A6B082A27451D0028C4ED /* SceneDelegate.swift in Sources */,
+				C693AD372A2A3E5100EEDDDC /* HomePageCollectionViewCell.swift in Sources */,
 				C63A6B532A28FA600028C4ED /* NetworkErrorTypes.swift in Sources */,
 				C63A6B3D2A28AAD10028C4ED /* BagPageVIewFactory.swift in Sources */,
 				C63A6B282A2896A10028C4ED /* HomePageViewFactory.swift in Sources */,
