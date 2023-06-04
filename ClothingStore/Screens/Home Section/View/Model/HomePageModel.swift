@@ -7,8 +7,13 @@
 
 import UIKit
 
-struct HomePageModel {
-    let image: UIImageView
+struct HomePageTableViewModel {
+    let image: UIImage!
     let title: String
     let description: String
+}
+
+struct HomePageCollectionViewModel {
+    let image: UIImage!
+    let title: String
 }

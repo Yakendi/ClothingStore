@@ -6,21 +6,24 @@
 //
 
 import UIKit
+import SnapKit
 
 final class HomePageViewController: UIViewController {
     
-    let sections = [TableViewSection.collectionViewCell, TableViewSection.tableViewCell]
+    // MARK: - Private properties
+    private var models: [CellModel] = []
     
     // MARK: - UI
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.register(HomePageCollectionViewCell.self, forCellReuseIdentifier: HomePageCollectionViewCell.identifier)
+        tableView.register(HomePageCollectionTableViewCell.self, forCellReuseIdentifier: HomePageCollectionTableViewCell.identifier)
         tableView.register(HomePageTableViewCell.self, forCellReuseIdentifier: HomePageTableViewCell.identifier)
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
-
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +32,64 @@ final class HomePageViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         setup()
+        setupModels()
+    }
+    
+    private func setupModels() {
+        models.append(.collectionViewCell([
+        
+            HomePageCollectionViewModel(
+                image: UIImage(named: "collectionFirstImage"),
+                title: "С чем сочетать аксессуары?"
+            ),
+            HomePageCollectionViewModel(
+                image: UIImage(named: "collectionSecondImage"),
+                title: "Коллекции весна-лето"
+            ),
+            HomePageCollectionViewModel(
+                image: UIImage(named: "collectionThirdImage"),
+                title: "Новинки от Gucci"
+            ),
+            HomePageCollectionViewModel(
+                image: UIImage(named: "collectionFourthImage"),
+                title: "Базовый гардероб на каждый день"
+            ),
+            HomePageCollectionViewModel(
+                image: UIImage(named: "collectionFifthImage"),
+                title: "Лето - здесь!"
+            )
+        
+        ]))
+        
+        models.append(.tableViewCell([
+        
+            HomePageTableViewModel(
+                image: UIImage(named: "tableFirstImage"),
+                title: "Новинки от Cartier",
+                description: "Cвежая коллекция уже ждет вас"
+            ),
+            HomePageTableViewModel(
+                image: UIImage(named: "tableSecondImage"),
+                title: "Модные показы 2023",
+                description: "Все самое интересное в нашей подборке"
+            ),
+            HomePageTableViewModel(
+                image: UIImage(named: "tableThirdImage"),
+                title: "Легкие платья на лето",
+                description: "То, что так необходимо в эту жару!"
+            ),
+            HomePageTableViewModel(
+                image: UIImage(named: "tableFourthImage"),
+                title: "Gucci",
+                description: "Новинки от главного модного дома Италии"
+            ),
+            HomePageTableViewModel(
+                image: UIImage(named: "tableFifthImage"),
+                title: "Аксессуары - наше все!",
+                description: "Добавьте деталей в свой образ"
+            )
+        
+        ]))
     }
 }
 
@@ -47,29 +108,52 @@ private extension HomePageViewController {
 
 // MARK: - Table view data source and delegate
 extension HomePageViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        models.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        switch section {
-        case TableViewSection.collectionViewCell.rawValue:
-            return 5
-        case TableViewSection.tableViewCell.rawValue:
-            return 5
-        default:
-            return 0
+        switch models[section] {
+        case .collectionViewCell(_):
+            return 1
+        case .tableViewCell(let models):
+            return models.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sectionsType = sections[indexPath.section]
-        var tableViewCell: UITableViewCell
-        switch sectionsType {
-        case .collectionViewCell:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomePageCollectionViewCell.identifier, for: indexPath)
-            tableViewCell = cell
-        case .tableViewCell:
-            let cell = tableView.dequeueReusableCell(withIdentifier: HomePageTableViewCell.identifier, for: indexPath)
-            tableViewCell = cell
+        switch models[indexPath.section] {
+        case .collectionViewCell(let models):
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomePageCollectionTableViewCell.identifier,
+                for: indexPath
+            ) as! HomePageCollectionTableViewCell
+            cell.configure(models)
+            return cell
+            
+        case .tableViewCell(let model):
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: HomePageTableViewCell.identifier,
+                for: indexPath
+            ) as! HomePageTableViewCell
+            let model = model[indexPath.row]
+            cell.configure(model)
+            return cell
         }
-        return tableViewCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch models[indexPath.section] {
+        case .collectionViewCell(_):
+            return view.frame.size.width - 210
+        case .tableViewCell(_):
+            return UITableView.automaticDimension
+        }
     }
 }
