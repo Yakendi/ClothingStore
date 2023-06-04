@@ -25,6 +25,7 @@ final class CatalogPageViewController: UIViewController {
         let tableView = UITableView()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         tableView.register(CatalogPageTableViewCell.self, forCellReuseIdentifier: CatalogPageTableViewCell.identifier)
         return tableView
     }()

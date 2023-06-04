@@ -18,21 +18,20 @@ class CatalogPageTableViewCell: UITableViewCell {
     // MARK: - UI
     private let wrapperView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemBackground
-        view.layer.cornerRadius = 3
         view.clipsToBounds = true
         return view
     }()
     
     private let categoryImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
     private let categoryNameLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = .white
         return label
     }()
     
@@ -48,16 +47,6 @@ class CatalogPageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        wrapperView.layer.masksToBounds = false
-        wrapperView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        wrapperView.layer.shadowRadius = 4
-        wrapperView.layer.shadowColor = UIColor.systemGray3.cgColor
-        wrapperView.layer.shadowOpacity = 0.5
-    }
-    
     // MARK: - Configurator
     func configure(_ model: CatalogPageModel) {
         categoryImageView.image = model.categoryImage
@@ -70,23 +59,23 @@ private extension CatalogPageTableViewCell {
     func setupViews() {
         contentView.addSubview(wrapperView)
         wrapperView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
-            make.top.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().offset(-16)
+            make.leading.equalToSuperview().offset(5)
+            make.top.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
             make.bottom.equalToSuperview()
         }
         
         wrapperView.addSubview(categoryImageView)
         categoryImageView.snp.makeConstraints { make in
             make.leading.top.bottom.equalToSuperview()
-            make.height.equalTo(100)
-            make.width.equalTo(150)
+            make.height.equalTo(220)
+            make.width.equalToSuperview()
         }
         
-        wrapperView.addSubview(categoryNameLabel)
+        categoryImageView.addSubview(categoryNameLabel)
         categoryNameLabel.snp.makeConstraints { make in
-            make.leading.equalTo(categoryImageView.snp.trailing).offset(20)
-            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(20)
+            make.bottom.equalToSuperview().offset(-20)
         }
     }
 }
