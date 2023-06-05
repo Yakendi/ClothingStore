@@ -8,15 +8,15 @@
 import UIKit
 import SnapKit
 
-final class CatalogPageViewController: UIViewController {
+final class CategoriesPageViewController: UIViewController {
     
     // MARK: - Private properties
-    private let model: [CatalogPageModel] = [
+    private let model: [CategoriesPageModel] = [
     
-        CatalogPageModel(categoryImage: UIImage(named: "menswear"), categoryName: "Мужская одежда"),
-        CatalogPageModel(categoryImage: UIImage(named: "womenswear"), categoryName: "Женская одежда"),
-        CatalogPageModel(categoryImage: UIImage(named: "jewelery"), categoryName: "Украшения"),
-        CatalogPageModel(categoryImage: UIImage(named: "electronics"), categoryName: "Электроника")
+        CategoriesPageModel(categoryImage: UIImage(named: "menswear"), categoryName: "Мужская одежда"),
+        CategoriesPageModel(categoryImage: UIImage(named: "womenswear"), categoryName: "Женская одежда"),
+        CategoriesPageModel(categoryImage: UIImage(named: "jewelery"), categoryName: "Украшения"),
+        CategoriesPageModel(categoryImage: UIImage(named: "electronics"), categoryName: "Электроника")
         
     ]
     
@@ -26,7 +26,7 @@ final class CatalogPageViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
-        tableView.register(CatalogPageTableViewCell.self, forCellReuseIdentifier: CatalogPageTableViewCell.identifier)
+        tableView.register(CategoriesPageTableViewCell.self, forCellReuseIdentifier: CategoriesPageTableViewCell.identifier)
         return tableView
     }()
     
@@ -42,7 +42,7 @@ final class CatalogPageViewController: UIViewController {
 }
 
 // MARK: - Setup views
-private extension CatalogPageViewController {
+private extension CategoriesPageViewController {
     func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -55,13 +55,13 @@ private extension CatalogPageViewController {
 }
 
 // MARK: - UITableView data source and delegate
-extension CatalogPageViewController: UITableViewDataSource, UITableViewDelegate {
+extension CategoriesPageViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CatalogPageTableViewCell.identifier, for: indexPath) as! CatalogPageTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesPageTableViewCell.identifier, for: indexPath) as! CategoriesPageTableViewCell
         let selectedRow = model[indexPath.row]
         cell.configure(selectedRow)
         return cell

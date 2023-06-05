@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CatalogPageTableViewCell: UITableViewCell {
+class CategoriesPageTableViewCell: UITableViewCell {
     
     // MARK: - Identifier
     static var identifier: String {
@@ -48,14 +48,14 @@ class CatalogPageTableViewCell: UITableViewCell {
     }
     
     // MARK: - Configurator
-    func configure(_ model: CatalogPageModel) {
+    func configure(_ model: CategoriesPageModel) {
         categoryImageView.image = model.categoryImage
         categoryNameLabel.text = model.categoryName
     }
 }
 
 // MARK: - Setup views
-private extension CatalogPageTableViewCell {
+private extension CategoriesPageTableViewCell {
     func setupViews() {
         contentView.addSubview(wrapperView)
         wrapperView.snp.makeConstraints { make in

@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct CatalogPageModel {
+struct CategoriesPageModel {
     let categoryImage: UIImage!
     let categoryName: String
 }

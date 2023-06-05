@@ -7,9 +7,9 @@
 
 import UIKit
 
-struct CatalogPageViewFactory {
-    static func create() -> CatalogPageViewController {
-        let controller = CatalogPageViewController()
+struct CategoriesPageViewFactory {
+    static func create() -> CategoriesPageViewController {
+        let controller = CategoriesPageViewController()
         return controller
     }
 }

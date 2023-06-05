@@ -49,7 +49,7 @@ class TabBarController: UITabBarController {
 
     // MARK: - Public
     let homePageViewController = HomePageCoordinator()
-    let catalogPageViewController = CatalogPageCoordinator()
+    let categoriesPageViewController = CategoriesPageCoordinator()
     let favoritesPageViewController = FavoritesPageCoordinator()
     let cartPageViewController = BagPageCoordinator()
     let accountPageViewController = AccountPageCoordinator()
@@ -73,7 +73,7 @@ extension TabBarController {
             tag: 1
         )
         
-        catalogPageViewController.navigationController.tabBarItem = UITabBarItem(
+        categoriesPageViewController.navigationController.tabBarItem = UITabBarItem(
             title: TabBarItems.catalog.title,
             image: TabBarItems.catalog.image,
             tag: 2
@@ -99,7 +99,7 @@ extension TabBarController {
         
         setViewControllers([
             homePageViewController.navigationController,
-            catalogPageViewController.navigationController,
+            categoriesPageViewController.navigationController,
             favoritesPageViewController.navigationController,
             cartPageViewController.navigationController,
             accountPageViewController.navigationController
