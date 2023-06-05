@@ -5,7 +5,7 @@
 //  Created by Аслан Микалаев on 01.06.2023.
 //
 
-import UIKit
+import Foundation
 
 struct CategoriesPageViewFactory {
     static func create() -> CategoriesPageViewController {

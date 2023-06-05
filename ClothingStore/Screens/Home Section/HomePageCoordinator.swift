@@ -18,10 +18,9 @@ final class HomePageCoordinator: Coordinator {
         
         start()
     }
+    
     func start() {
         let controller = HomePageViewFactory.create()
         self.navigationController.setViewControllers([controller], animated: true)
     }
-    
-    
 }

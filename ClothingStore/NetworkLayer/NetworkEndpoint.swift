@@ -16,7 +16,7 @@ extension Endpoint {
     var url: URL? {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "fakestoreapi.com"
+        components.host = "647defafaf984710854aa3ba.mockapi.io"
         components.path = path
         components.queryItems = queryItems
         
@@ -26,22 +26,22 @@ extension Endpoint {
 
 extension Endpoint {
     static func allProducts() -> Self {
-        Endpoint(path: "products")
+        Endpoint(path: "/products")
     }
     
     static func mens() -> Self {
-        Endpoint(path: "category/men's clothing")
+        Endpoint(path: "/category/mensclothing")
     }
     
     static func womens() -> Self {
-        Endpoint(path: "category/women's clothing")
+        Endpoint(path: "/category/women's clothing")
     }
     
     static func jewelery() -> Self {
-        Endpoint(path: "category/jewelery")
+        Endpoint(path: "/category/jewelery")
     }
     
     static func electronics() -> Self {
-        Endpoint(path: "category/electronics")
+        Endpoint(path: "/category/electronics")
     }
 }

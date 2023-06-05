@@ -10,7 +10,7 @@ import UIKit
 final class FavoritesPageCoordinator: Coordinator {
     
     // MARK: - Public
-    var navigationController = UINavigationController()
+    var navigationController: UINavigationController
     
     // MARK: - Constructor
     init() {

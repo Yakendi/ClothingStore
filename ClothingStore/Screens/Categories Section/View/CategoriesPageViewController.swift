@@ -62,8 +62,12 @@ extension CategoriesPageViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoriesPageTableViewCell.identifier, for: indexPath) as! CategoriesPageTableViewCell
-        let selectedRow = model[indexPath.row]
-        cell.configure(selectedRow)
+        let model = model[indexPath.row]
+        cell.configure(model)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRow = model[indexPath.row]
     }
 }

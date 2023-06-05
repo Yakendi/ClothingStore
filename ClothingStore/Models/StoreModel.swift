@@ -8,9 +8,13 @@
 import Foundation
 
 struct StoreModel: Codable {
+    let products: [Products]
+}
+
+struct Products: Codable {
     let id: String
     let title: String
     let price: Int
     let description: String
-    let category: String
+    let image: String
 }
