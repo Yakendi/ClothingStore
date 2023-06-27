@@ -19,7 +19,8 @@ final class BaseCatalogCollectionViewCell: UICollectionViewCell {
     // MARK: - UI
     private let catalogItemImageView: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .red
+        image.image = UIImage(named: "bagThumbImage")
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
@@ -49,7 +50,7 @@ final class BaseCatalogCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Configurator
-    func configure(_ model: Products) {
+    func configure() {
         
         // label
 //        catalogItemImageView.kf.setImage(with: URL(string: model.image))

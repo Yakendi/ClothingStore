@@ -13,7 +13,7 @@ final class ServiceFactory {
     static let shared = ServiceFactory()
     
     // MARK: - Public
-    var networkService = NetworkService()
+    let  networkService: NetworkService
     
     // MARK: - Constructor
     private init(networkService: NetworkService = .init()) {

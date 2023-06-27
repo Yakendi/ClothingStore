@@ -67,7 +67,7 @@ private extension CategoriesPageTableViewCell {
         
         wrapperView.addSubview(categoryImageView)
         categoryImageView.snp.makeConstraints { make in
-            make.leading.top.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
             make.height.equalTo(220)
             make.width.equalToSuperview()
         }

@@ -14,7 +14,7 @@ final class NetworkService {
     typealias Completion = (Data?, URLResponse?, Error?) -> Void
     
     // MARK: - Private
-    private let session: URLSession
+    private let session: URLSession 
     private let decoder: JSONDecoder
     
     // MARK: - Constructor
